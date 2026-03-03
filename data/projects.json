@@ -1,0 +1,42 @@
+[
+  {
+    "id": "eventjetter",
+    "featured": true,
+    "url": "https://eventjetter.com",
+    "tags": ["Symfony", "Angular", "PostgreSQL", "Remotion", "OpenAI", "event inventory provider API", "hotel provider", "flight provider", "Multi-tenant SaaS"]
+  },
+  {
+    "id": "costdetect",
+    "featured": true,
+    "tags": ["React Native", "Laravel", "Python", "PyTorch", "NumPy"]
+  },
+  {
+    "id": "email",
+    "tags": ["PHP", "MySQL", "Custom MTA"]
+  },
+  {
+    "id": "rateprowler",
+    "tags": ["Go", "SQLite"]
+  },
+  {
+    "id": "maildir",
+    "badge": true,
+    "tags": ["PHP", "Open Source"]
+  },
+  {
+    "id": "tld",
+    "tags": ["Python"]
+  },
+  {
+    "id": "commentgpt",
+    "tags": ["Express.js", "OpenAI"]
+  },
+  {
+    "id": "unicode",
+    "tags": ["TypeScript", "SCSS"]
+  },
+  {
+    "id": "postimage",
+    "tags": ["HTML", "CSS", "JavaScript"]
+  }
+]
