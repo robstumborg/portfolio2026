@@ -37,7 +37,7 @@
   "project.costdetect.desc.p2": "Built the complete system: React Native frontend, Laravel API backend, and a Python/PyTorch pipeline for product categorization. The core engineering challenge wasn't the app, it was building a classifier accurate enough that users could actually trust the output.",
 
   "project.email.title": "Email Campaign Platform",
-  "project.email.desc": "A multi-tenant email campaign management platform used operationally by affiliate networks, before \"SaaS\" was the common term for it. Handled contact segmentation, A/B split testing with results tracking, and high-volume delivery via a PowerMTA. My first experience building software other businesses depended on operationally, and the origin of my understanding of how technology and marketing intersect at scale.",
+  "project.email.desc": "A multi-tenant email campaign management platform used operationally by affiliate networks, before \"SaaS\" was the common term for it. Handled contact segmentation, A/B split testing with results tracking, and high-volume delivery via PowerMTA. My first experience building software other businesses depended on operationally, and the origin of my understanding of how technology and marketing intersect at scale.",
 
   "project.rateprowler.title": "rateprowler",
   "project.rateprowler.desc": "When running large-scale scraping pipelines against retailer APIs without documented rate limits, buying too few proxies wastes money, too many wastes more. rateprowler probes an API systematically to empirically estimate its rate ceiling, so you can size infrastructure to match reality rather than guesswork. Built from a real operational need during high-volume data collection work.",
@@ -75,7 +75,7 @@
 
   "exp.costdetect.company": "CostDetect",
   "exp.costdetect.role": "Software Architect · Full Stack Developer",
-  "exp.costdetect.desc": "Originally engaged through <strong>stumb digital</strong> as a contract project, then transitioned to a full-time role. Built the complete platform: React Native frontend, Laravel API backend, and a Python/PyTorch ML pipeline for grocery product categorization. Responsible for architecture, implementation, and iteration across the full stack.",
+  "exp.costdetect.desc": "Originally engaged through stumb digital as a contract project, then transitioned to a full-time role. Built the complete platform: React Native frontend, Laravel API backend, and a Python/PyTorch ML pipeline for grocery product categorization. Responsible for architecture, implementation, and iteration across the full stack.",
   "exp.costdetect.dates": "2020 → Aug 2023",
   "exp.costdetect.skills.label": "Skills",
   "exp.costdetect.highlights.label": "Highlights",

@@ -75,7 +75,7 @@
 
   "exp.costdetect.company": "CostDetect",
   "exp.costdetect.role": "Arquitecto de Software \u00b7 Desarrollador Full Stack",
-  "exp.costdetect.desc": "Inicialmente contratado a través de <strong>stumb digital</strong> como proyecto por contrato, luego transicioné a un rol a tiempo completo. Construí la plataforma completa: frontend en React Native, backend API en Laravel y un pipeline en Python/PyTorch de ML para categorización de productos de supermercado. Responsable de la arquitectura, implementación e iteración en todo el stack.",
+  "exp.costdetect.desc": "Inicialmente contratado a través de stumb digital como proyecto por contrato, luego transicioné a un rol a tiempo completo. Construí la plataforma completa: frontend en React Native, backend API en Laravel y un pipeline en Python/PyTorch de ML para categorización de productos de supermercado. Responsable de la arquitectura, implementación e iteración en todo el stack.",
   "exp.costdetect.dates": "2020 → Ago 2023",
   "exp.costdetect.skills.label": "Habilidades",
   "exp.costdetect.highlights.label": "Logros",
