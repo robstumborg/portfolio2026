@@ -12,7 +12,7 @@
   },
   {
     "id": "email",
-    "tags": ["PHP", "MySQL", "Custom MTA"]
+    "tags": ["PHP", "MySQL", "PowerMTA"]
   },
   {
     "id": "rateprowler",
