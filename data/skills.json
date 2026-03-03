@@ -1,0 +1,22 @@
+[
+  {
+    "id": "languages",
+    "entries": ["Python", "PHP", "JavaScript", "TypeScript", "SQL"]
+  },
+  {
+    "id": "backend",
+    "entries": ["FastAPI", "Django", "Symfony", "Laravel", "Express.js", "PostgreSQL"]
+  },
+  {
+    "id": "frontend",
+    "entries": ["React", "React Native", "Next.js", "Angular", "Vue.js"]
+  },
+  {
+    "id": "infrastructure",
+    "entries": ["Docker", "CI/CD", "Linux", "Bash", "Git", "GitHub Actions", "REST APIs"]
+  },
+  {
+    "id": "product",
+    "entries": ["Figma", "Illustrator", "Wireframing", "Conversion Optimization", "Growth Marketing"]
+  }
+]

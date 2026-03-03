@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ t['meta.title'] }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- ─── NAV ────────────────────────────────────────────── -->
+  <nav id="top-nav">
+    <span class="nav-logo"><span>rs</span> / <span data-i18n="nav.logo">{{ t['nav.logo'] }}</span></span>
+    <ul class="nav-links">
+      <li><a href="#home" class="active" data-i18n="nav.home">{{ t['nav.home'] }}</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">{{ t['nav.projects'] }}</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">{{ t['nav.experience'] }}</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">{{ t['nav.contact'] }}</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle" role="switch" aria-label="Toggle language">
+        <button id="btn-en" class="active" title="English">EN</button>
+        <button id="btn-es" title="Español">ES</button>
+      </div>
+      <div class="theme-toggle" role="switch" aria-label="Toggle theme">
+        <button id="btn-light" data-i18n-title="btn.light" title="{{ t['btn.light'] }}">☀️</button>
+        <button id="btn-dark" class="active" data-i18n-title="btn.dark" title="{{ t['btn.dark'] }}">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── MAIN ────────────────────────────────────────────── -->
+  <main>
+
+    <!-- HERO -->
+    <section id="home">
+      <p class="hero-tag" data-i18n="hero.tag">{{ t['hero.tag'] }}</p>
+      <h1 data-i18n-html="hero.heading">{{ t['hero.heading'] }}</h1>
+      <div class="hero-bio">
+        <p data-i18n="hero.bio.p1">
+          {{ t['hero.bio.p1'] }}
+        </p>
+      </div>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero.btn.projects">{{ t['hero.btn.projects'] }}</a>
+        <a href="#contact" class="btn btn-ghost" data-i18n="hero.btn.contact">{{ t['hero.btn.contact'] }}</a>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-inner">
+        <div class="section-label" data-i18n="section.skills">{{ t['section.skills'] }}</div>
+        <div class="section-body fade-in">
+          <div class="skills-grid">
+{%- for group in skills %}
+            <div class="skill-group">
+              <h3 data-i18n="skills.{{ group.id }}">{{ t['skills.' + group.id] }}</h3>
+              <ul>
+{%- for item in group.entries %}
+                <li>{{ item }}</li>
+{%- endfor %}
+              </ul>
+            </div>
+{%- endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-inner">
+        <div class="section-label" data-i18n="section.projects">{{ t['section.projects'] }}</div>
+        <div class="section-body">
+{% for proj in projects if proj.featured %}
+
+          <!-- Featured: {{ t['project.' + proj.id + '.title'] }} -->
+          <div class="featured-card fade-in"{% if not loop.first %} style="margin-top:20px;"{% endif %} data-i18n-featured="featured.label" data-featured-label="{{ t['featured.label'] }}">
+{%- if proj.url is defined and proj.url %}
+            <div class="project-title">
+              <a href="{{ proj.url }}" target="_blank" rel="noopener">
+                <span data-i18n="project.{{ proj.id }}.title">{{ t['project.' + proj.id + '.title'] }}</span> <span class="project-arrow">→</span>
+              </a>
+            </div>
+{%- else %}
+            <div class="project-title" data-i18n="project.{{ proj.id }}.title">{{ t['project.' + proj.id + '.title'] }}</div>
+{%- endif %}
+            <div class="project-meta" data-i18n="project.{{ proj.id }}.meta">{{ t['project.' + proj.id + '.meta'] }}</div>
+            <div class="project-desc">
+{%- for para in proj.desc_paras %}
+{%- if para.is_html %}
+              <p data-i18n-html="project.{{ proj.id }}.desc.p{{ para.index }}">
+                {{ t['project.' + proj.id + '.desc.p' + para.index|string] }}
+              </p>
+{%- else %}
+              <p data-i18n="project.{{ proj.id }}.desc.p{{ para.index }}">
+                {{ t['project.' + proj.id + '.desc.p' + para.index|string] }}
+              </p>
+{%- endif %}
+{%- endfor %}
+            </div>
+            <div class="tags">
+{%- for tag in proj.tags %}
+              <span class="tag">{{ tag }}</span>
+{%- endfor %}
+            </div>
+          </div>
+{% endfor %}
+          <!-- Projects list -->
+          <div class="projects-list">
+{% for proj in projects if not proj.featured %}
+
+            <div class="project-row fade-in">
+              <div>
+{%- if proj.badge is defined and proj.badge %}
+                <div class="project-row-title"><span data-i18n="project.{{ proj.id }}.title">{{ t['project.' + proj.id + '.title'] }}</span> <span class="tag" style="font-size:10px;margin-left:4px;" data-i18n="project.{{ proj.id }}.badge">{{ t['project.' + proj.id + '.badge'] }}</span></div>
+{%- elif proj.url is defined and proj.url %}
+                <div class="project-row-title">
+                  <a href="{{ proj.url }}" target="_blank" rel="noopener">
+                    <span data-i18n="project.{{ proj.id }}.title">{{ t['project.' + proj.id + '.title'] }}</span> <span class="project-arrow">→</span>
+                  </a>
+                </div>
+{%- else %}
+                <div class="project-row-title" data-i18n="project.{{ proj.id }}.title">{{ t['project.' + proj.id + '.title'] }}</div>
+{%- endif %}
+                <div class="project-row-desc" data-i18n="project.{{ proj.id }}.desc">
+                  {{ t['project.' + proj.id + '.desc'] }}
+                </div>
+                <div class="project-row-tags">
+{%- for tag in proj.tags %}
+                  <span class="tag">{{ tag }}</span>
+{%- endfor %}
+                </div>
+              </div>
+            </div>
+{% endfor %}
+          </div><!-- /projects-list -->
+        </div><!-- /section-body -->
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-inner">
+        <div class="section-label" data-i18n="section.experience">{{ t['section.experience'] }}</div>
+        <div class="section-body">
+
+          <div class="exp-list">
+{% for exp in experience %}
+
+            <div class="exp-item fade-in">
+              <div>
+{%- if exp.most_recent is defined and exp.most_recent %}
+                <div class="exp-company"><span data-i18n="exp.{{ exp.id }}.company">{{ t['exp.' + exp.id + '.company'] }}</span> <span class="exp-badge" data-i18n="exp.badge.recent">{{ t['exp.badge.recent'] }}</span></div>
+{%- else %}
+                <div class="exp-company" data-i18n="exp.{{ exp.id }}.company">{{ t['exp.' + exp.id + '.company'] }}</div>
+{%- endif %}
+                <div class="exp-role" data-i18n="exp.{{ exp.id }}.role">{{ t['exp.' + exp.id + '.role'] }}</div>
+                <div class="exp-desc" data-i18n="exp.{{ exp.id }}.desc">
+                  {{ t['exp.' + exp.id + '.desc'] }}
+                </div>
+                <div class="exp-extras">
+                  <div>
+                    <div class="exp-extras-label" data-i18n="exp.{{ exp.id }}.skills.label">{{ t['exp.' + exp.id + '.skills.label'] }}</div>
+                    <div class="exp-skills">
+{%- for skill in exp.skills %}
+                      <span class="tag">{{ skill }}</span>
+{%- endfor %}
+                    </div>
+                  </div>
+                  <div>
+                    <div class="exp-extras-label" data-i18n="exp.{{ exp.id }}.highlights.label">{{ t['exp.' + exp.id + '.highlights.label'] }}</div>
+                    <ul class="exp-highlights">
+{%- for hl in exp.highlight_list %}
+{%- if hl.is_html %}
+                      <li data-i18n-html="exp.{{ exp.id }}.highlight.{{ hl.index }}">{{ t['exp.' + exp.id + '.highlight.' + hl.index|string] }}</li>
+{%- else %}
+                      <li data-i18n="exp.{{ exp.id }}.highlight.{{ hl.index }}">{{ t['exp.' + exp.id + '.highlight.' + hl.index|string] }}</li>
+{%- endif %}
+{%- endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="exp-dates" data-i18n="exp.{{ exp.id }}.dates">{{ t['exp.' + exp.id + '.dates'] }}</div>
+            </div>
+{% endfor %}
+          </div>
+
+          <div style="margin-top:32px;">
+            <a href="#" class="btn btn-ghost" data-i18n="exp.btn.cv">{{ t['exp.btn.cv'] }}</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-inner">
+        <div class="section-label" data-i18n="section.contact">{{ t['section.contact'] }}</div>
+        <div class="section-body fade-in">
+          <div class="contact-block">
+            <h2 data-i18n="contact.heading">{{ t['contact.heading'] }}</h2>
+            <p data-i18n="contact.desc">{{ t['contact.desc'] }}</p>
+            <div class="contact-links">
+              <a href="mailto:rob@stumb.org" class="btn btn-primary" data-i18n="contact.btn.email">{{ t['contact.btn.email'] }}</a>
+              <a href="https://github.com/robstumborg" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="contact.btn.github">{{ t['contact.btn.github'] }}</a>
+              <a href="https://linkedin.com/in/robertstumborg" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="contact.btn.linkedin">{{ t['contact.btn.linkedin'] }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span data-i18n-html="footer.text">{{ t['footer.text'] }}</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
