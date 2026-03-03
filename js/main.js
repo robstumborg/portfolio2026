@@ -3,7 +3,19 @@
   const SUPPORTED_LANGS = ["en", "es"];
 
   const I18N_BINDINGS = [
-    { attr: "data-i18n", apply: (el, val) => (el.textContent = val) },
+    {
+      attr: "data-i18n",
+      apply: (el, val) => {
+        const icon = el.querySelector(".btn-icon");
+        if (icon) {
+          // preserve inline SVG icon, only replace text
+          el.textContent = val;
+          el.prepend(icon);
+        } else {
+          el.textContent = val;
+        }
+      },
+    },
     { attr: "data-i18n-html", apply: (el, val) => (el.innerHTML = val) },
     { attr: "data-i18n-title", apply: (el, val) => (el.title = val) },
     {
