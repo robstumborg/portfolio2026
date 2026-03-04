@@ -21,9 +21,12 @@
       <li><a href="#contact" data-i18n="nav.contact">{{ t['nav.contact'] }}</a></li>
     </ul>
     <div class="nav-right">
-      <div class="lang-toggle" role="switch" aria-label="Toggle language">
-        <button id="btn-en" class="active" title="English">EN</button>
-        <button id="btn-es" title="Español">ES</button>
+      <div class="lang-toggle" role="switch" aria-label="Toggle language" data-lang="en">
+        <span class="lang-label" data-lang="en">EN</span>
+        <span class="lang-thumb">
+          <img src="img/flags/canada.svg" alt="" class="lang-flag" />
+        </span>
+        <span class="lang-label" data-lang="es">ES</span>
       </div>
       <div class="theme-toggle" role="switch" aria-label="Toggle theme">
         <button id="btn-light" data-i18n-title="btn.light" title="{{ t['btn.light'] }}">☀️</button>

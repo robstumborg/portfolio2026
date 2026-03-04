@@ -33,7 +33,7 @@ DIST_DIR = ROOT / "dist"
 SUPPORTED_LANGS = ["en", "es"]
 
 # static asset directories to copy into dist/
-STATIC_DIRS = ["css", "js"]
+STATIC_DIRS = ["css", "js", "img"]
 
 
 def load_json(path: Path) -> dict | list:
