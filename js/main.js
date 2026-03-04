@@ -28,13 +28,12 @@
   const html = document.documentElement;
   const themeToggle = document.querySelector(".theme-toggle");
   const langToggle = document.querySelector(".lang-toggle");
+  const langThumbImg = langToggle.querySelector(".lang-flag");
+  const langLabels = langToggle.querySelectorAll(".lang-label");
+  const FLAG_SRC = { en: "img/flags/canada.svg", es: "img/flags/mexico.svg" };
   const themeButtons = {
     light: document.getElementById("btn-light"),
     dark: document.getElementById("btn-dark"),
-  };
-  const langButtons = {
-    en: document.getElementById("btn-en"),
-    es: document.getElementById("btn-es"),
   };
 
   // ── theme ───────────────────────────────────────────────
@@ -118,15 +117,18 @@
     html.setAttribute("lang", currentLang);
   }
 
-  function updateLangButtons() {
-    langButtons.en.classList.toggle("active", currentLang === "en");
-    langButtons.es.classList.toggle("active", currentLang === "es");
+  function updateLangToggle() {
+    langToggle.setAttribute("data-lang", currentLang);
+    langThumbImg.src = FLAG_SRC[currentLang];
+    langLabels.forEach((label) => {
+      label.classList.toggle("active", label.getAttribute("data-lang") === currentLang);
+    });
   }
 
   async function setLang(lang) {
     currentLang = lang;
     localStorage.setItem("lang", lang);
-    updateLangButtons();
+    updateLangToggle();
     try {
       const strings = await loadLocale(lang);
       applyLocale(strings);
