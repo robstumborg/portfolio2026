@@ -2,8 +2,8 @@
   {
     "id": "eventjetter",
     "featured": true,
-    "url": "https://eventjetter.com",
-    "tags": ["Symfony", "Angular", "PostgreSQL", "Remotion", "OpenAI", "TicketEvolution API", "LiteAPI", "Duffel", "Multi-tenant SaaS"]
+    "url": "https://demo.eventjetter.com",
+    "tags": ["Symfony", "Angular", "PostgreSQL", "Remotion", "OpenAI", "TicketEvolution", "LiteAPI", "Duffel", "Multi-tenant SaaS"]
   },
   {
     "id": "shooterbet",
