@@ -25,7 +25,7 @@
   "featured.label": "FEATURED",
 
   "project.eventjetter.title": "EventJetter",
-  "project.eventjetter.meta": "Jan 2026 \u2192 ongoing \u00b7 eventjetter.com",
+  "project.eventjetter.meta": "Jan 2026 \u2192 ongoing \u00b7 demo.eventjetter.com",
   "project.eventjetter.desc.p1": "EventJetter is a multi-tenant B2B SaaS platform for event travel agencies. Its centerpiece is event discovery: agents search any destination and instantly see every concert, game, and show happening within their trip dates — powered by a locally-synced catalog with fuzzy search, trending performers, and destination-level browsing. From there, they assemble complete travel packages with aligned hotels and flights.",
   "project.eventjetter.desc.p2": "The agent workflow covers itinerary building, client management, package lifecycle tracking (draft → live → archived), and line-item pricing. A standout feature is the automated marketing pipeline: Remotion renders branded video ads in multiple formats and durations, Playwright generates social media banners, and AI-assisted tools produce contextual captions and email copy — all from package data.",
   "project.eventjetter.desc.p3": "The core architecture challenge was clean multi-tenancy with three permission tiers (app admin → agency admin → agent). Doctrine query extensions automatically scope all data access by agency and role, so controllers and repositories never handle tenant filtering directly.",
