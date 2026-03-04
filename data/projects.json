@@ -6,6 +6,12 @@
     "tags": ["Symfony", "Angular", "PostgreSQL", "Remotion", "OpenAI", "TicketEvolution API", "LiteAPI", "Duffel", "Multi-tenant SaaS"]
   },
   {
+    "id": "shooterbet",
+    "featured": true,
+    "url": "https://shooter.bet",
+    "tags": ["Laravel", "Angular", "PostgreSQL", "WebSockets", "Python", "Twitch", "Valve GSI", "SourceMod"]
+  },
+  {
     "id": "costdetect",
     "featured": true,
     "tags": ["React Native", "Laravel", "Python", "PyTorch", "NumPy"]
