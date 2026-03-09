@@ -2,7 +2,7 @@
   {
     "id": "eventjetter",
     "featured": true,
-    "url": "https://demo.eventjetter.com",
+    "url": "https://eventjetter.com",
     "tags": ["Symfony", "Angular", "PostgreSQL", "Remotion", "Multi-tenant SaaS"]
   },
   {

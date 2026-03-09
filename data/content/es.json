@@ -25,7 +25,7 @@
   "featured.label": "DESTACADO",
 
   "project.eventjetter.title": "EventJetter",
-  "project.eventjetter.meta": "Ene 2026 \u2192 en curso \u00b7 demo.eventjetter.com",
+  "project.eventjetter.meta": "Ene 2026 \u2192 en curso \u00b7 eventjetter.com",
   "project.eventjetter.desc.p1": "EventJetter es una plataforma SaaS B2B multi-tenant para agencias de viajes especializadas en eventos. Su pieza central es el descubrimiento de eventos: los agentes buscan cualquier destino y ven al instante cada concierto, partido y espectáculo dentro de las fechas de su viaje — impulsado por un catálogo sincronizado localmente con búsqueda difusa, artistas en tendencia y navegación por destino. A partir de ahí, ensamblan paquetes de viaje completos con hoteles y vuelos alineados.",
   "project.eventjetter.desc.p2": "El flujo de trabajo del agente cubre creación de itinerarios, gestión de clientes, seguimiento del ciclo de vida de paquetes (borrador → activo → archivado) y precios por línea de artículo. Una funcionalidad destacada es el pipeline de marketing automatizado: Remotion renderiza anuncios de video con marca en múltiples formatos y duraciones, Playwright genera banners para redes sociales y herramientas con IA producen subtítulos contextuales y textos de email — todo a partir de los datos del paquete.",
   "project.eventjetter.desc.p3": "El desafío arquitectónico principal fue una multi-tenencia limpia con tres niveles de permisos (admin de app → admin de agencia → agente). Las extensiones de consulta de Doctrine filtran automáticamente todo el acceso a datos por agencia y rol, de modo que los controladores y repositorios nunca manejan el filtrado de tenants directamente.",
